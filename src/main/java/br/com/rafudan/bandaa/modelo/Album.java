@@ -13,6 +13,6 @@ public class Album {
     private String titulo;
     @Min(value = 1, message = "O Disco deve ter pelo menos uma faixa")
     private int faixas;
-
+    @OneToOne
     private Banda banda;
 }

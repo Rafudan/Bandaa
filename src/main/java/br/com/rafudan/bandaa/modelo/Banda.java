@@ -17,6 +17,8 @@ public class Banda {
     private String anoCriacao;
     @NotBlank(message = "Genero Musical nao pode ser em branco")
     private String generoMusical;
+    @OneToMany
+    private List<Album> albuns;
 
     public Banda(Long id, String nomeBanda, String anoCriacao, String generoMusical) {
         this.id = id;
