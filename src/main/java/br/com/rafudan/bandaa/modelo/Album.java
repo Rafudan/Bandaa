@@ -13,6 +13,32 @@ public class Album {
     private String titulo;
     @Min(value = 1, message = "O Disco deve ter pelo menos uma faixa")
     private int faixas;
-    @OneToOne
+    @ManyToOne
     private Banda banda;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public int getFaixas() {
+		return faixas;
+	}
+	public void setFaixas(int faixas) {
+		this.faixas = faixas;
+	}
+	public Banda getBanda() {
+		return banda;
+	}
+	public void setBanda(Banda banda) {
+		this.banda = banda;
+	}
+    
+    
 }
