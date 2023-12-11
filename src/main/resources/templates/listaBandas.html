@@ -26,18 +26,6 @@
 		</div>
 	</div>
 
-<!--	<div class="row">-->
-<!--		<div class="col-sm-5">-->
-<!--&lt;!&ndash;			<form th:action="@{/buscaBanda}" method="post">&ndash;&gt;-->
-<!--&lt;!&ndash;				<div class="input-group">&ndash;&gt;-->
-<!--&lt;!&ndash;					<input type="text" class="form-control" name="nome"/>&ndash;&gt;-->
-<!--&lt;!&ndash;					<button class="btn btn-primary" type="submit">Buscar</button>&ndash;&gt;-->
-<!--&lt;!&ndash;					<button class="btn btn-danger" type="submit">Cancelar</button>&ndash;&gt;-->
-<!--&lt;!&ndash;				</div>&ndash;&gt;-->
-<!--&lt;!&ndash;			</form>&ndash;&gt;-->
-<!--		</div>-->
-<!--	</div>-->
-
 	<div class="row">
 		<table class="table table-striped">
 			<thead>
@@ -46,9 +34,7 @@
 				<th>Banda</th>
 				<th>Genero</th>
 				<th>Ano</th>
-				<th>Responsável</th>
-				<th>Ações</th>
-				<th>Empresário</th>
+
 			</tr>
 			</thead>
 			<tbody>
@@ -66,13 +52,13 @@
 					   th:data-confirm-delete="|Você gostaria de apagar ${banda.nomeBanda}?|"
 					   th:onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
 						<i class="fas fa-trash"></i> Apagar
-<!--					</a>-->
-<!--					<a class="btn btn-info" th:href="@{/editar/{id}(id=${banda.id})}">-->
-<!--						<i class="fas fa-edit"></i> Editar-->
-<!--					</a>-->
+				</a>
+					<a class="btn btn-info" th:href="@{/editar/{id}(id=${banda.id})}">
+						<i class="fas fa-edit"></i> Editar
+					</a>
 				</td>
 				<td>
-
+						<a class="btn btn-success" th:href="@{/album/listaAlbum/{id}(id=${banda.id})}">Albuns</a>
 				</td>
 			</tr>
 			</tbody>

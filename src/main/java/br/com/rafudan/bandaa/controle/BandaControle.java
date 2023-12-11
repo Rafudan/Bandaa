@@ -45,7 +45,7 @@ public class BandaControle {
         }
         bandaServico.novaBanda(banda);
 //        attributes.addFlashAttribute("mensagem", "Banda Cadastrada");
-        return "redirect:/listaBandas";
+        return "redirect:/listaBandas"; // manda para o metodo lista banda
     }
 
     @GetMapping("/editar/{id}")
@@ -53,12 +53,12 @@ public class BandaControle {
         try{
             Banda banda = bandaServico.buscaBandaId(id);
             model.addAttribute("banda", banda);
-            return "/editaBanda";
+            return "/editaBanda";// manda para o html
 
         }catch(BandaNotFoundException e ){
             attributes.addFlashAttribute("mensagem erro", e.getMessage());
         }
-        return "redirect:/";
+        return "redirect:/"; // manda para pagina principal
     }
 
 
